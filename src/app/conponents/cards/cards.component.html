@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" *ngIf="pokemons" [src]="imagen" alt="Pokemon">
+    <div class="card-body">
+        <h5 class="card-title" (click)="getPokemon(data.name)" *ngIf="data" style="cursor: pointer;">{{ data.name }}</h5>
+        <h5 class="card-title" *ngIf="pokemons">{{ pokemons.name }}</h5>
+        <!-- <p class="card-text"> </p> -->
+    </div>
+    <ul class="list-group list-group-flush" *ngIf="pokemons">
+        <li class="list-group-item" *ngFor="let habilidad of habilidades; let i = index">
+            Habilidad {{ i+1 }}: {{ habilidad }}
+        </li>
+    </ul>
+    <div class="card-body" *ngIf="pokemons">
+        <p> Salud: {{ pokemons.height }}</p>
+    </div>
+</div>
